@@ -1,0 +1,8 @@
+mi_billetterie_homepage:
+    path:     /Acceuil
+    defaults: { _controller: MIBilletterieBundle:Home:index }
+
+mi_billetterie_choixbillet:
+    path:     /Choix_Billet
+    defaults: { _controller: MIBilletterieBundle:Home:choose }
+

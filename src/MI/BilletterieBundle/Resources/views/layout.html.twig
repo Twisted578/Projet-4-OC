@@ -1,0 +1,207 @@
+{# MI/BilletterieBundle/Resources/views/layout.html.twig #}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--<meta http-equiv="x-ua-compatible" content="ie=edge">-->
+
+    <title>Billetterie du Louvre</title>
+    <!-- Font Awesome -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,600,300,300italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    {% endblock %}
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-desktop">
+<!--Navbar-->
+
+<div class='preloader'><div class='loaded'>&nbsp;</div></div>
+
+<nav class="navbar navbar-fixed-top navbar-light bg-faded">
+    <!--Collapse button-->
+    <div class="container">
+        <a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="fa fa-bars black-text"></i></a>
+
+        <!--Content for large and medium screens-->
+        <div class="navbar-desktop">
+            <!--Navbar Brand-->
+            <img src="{{ asset('img/logo_louvre.png') }}" width="130" alt="" />
+            <!--Links-->
+            <ul class="nav navbar-nav pull-right hidden-md-down text-uppercase">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#joinus">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#service">Billetterie</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Content for mobile devices-->
+        <div class="navbar-mobile">
+
+            <ul class="side-nav" id="mobile-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('mi_billetterie_homepage') }}">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('mi_billetterie_homepage') }}">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('mi_billetterie_choixbillet') }}">Billetterie</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--/.Navbar-->
+
+{% block Home %}
+
+{% endblock %}
+
+<section id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="main_footer_area white-text p-b-3">
+                <div class="col-md-3">
+                    <div class="single_f_widget p-t-3 wow fadeInUp">
+                        <img src="img/logo.png" alt="" />
+                        <div class="single_f_widget_text">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                            <div class="socail_f_widget">
+                                <a href="#!" ><i class="fa fa-facebook"></i></a>
+                                <a href="#!" ><i class="fa fa-google-plus"></i></a>
+                                <a href="#!" ><i class="fa fa-twitter"></i></a>
+                                <a href="#!" ><i class="fa fa-vimeo"></i></a>
+                                <a href="#!" ><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="single_f_widget m-t-3 wow fadeInUp">
+                        <h4 class="text-lowercase">Some features</h4>
+                        <div class="single_f_widget_text f_reatures">
+                            <ul>
+                                <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet</li>
+                                <li><i class="fa fa-check"></i>Aliquam tincidunt cons ectetuer</li>
+                                <li><i class="fa fa-check"></i>Vestibulum auctor dapibus con</li>
+                                <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet auctor dapibus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="single_f_widget m-t-3 wow fadeInUp">
+                        <h4 class="text-lowercase">Tags</h4>
+                        <div class="single_f_widget_text f_tags">
+                            <a href="#!">corporate</a>
+                            <a href="#!">agency</a>
+                            <a href="#!">portfolio</a>
+                            <a href="#!">blog</a>
+                            <a href="#!">elegant</a>
+                            <a href="#!">professional</a>
+                            <a href="#!">business</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="single_f_widget m-t-3 wow fadeInUp">
+                        <h4 class="text-lowercase">Flicker Posts</h4>
+                        <div class="single_f_widget_text f_flicker">
+                            <img src="img/flipcker1.jpg" alt="" />
+                            <img src="img/flipcker2.jpg" alt="" />
+                            <img src="img/flipcker3.jpg" alt="" />
+                            <img src="img/flipcker4.jpg" alt="" />
+                            <img src="img/flipcker3.jpg" alt="" />
+                            <img src="img/flipcker2.jpg" alt="" />
+                            <img src="img/flipcker4.jpg" alt="" />
+                            <img src="img/flipcker1.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_coppyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="copyright_text m-t-2 text-xs-center">
+                        <p class="wow zoomIn" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a target="_black" href="http://bootstrapthemes.co"> Bootstrap Themes</a> 2016. All Rights Reserved</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="socail_coppyright text-sm-right m-t-2 text-xs-center wow zoomIn">
+                        <a href="#!"><i class="fa fa-facebook"></i></a>
+                        <a href="#!"><i class="fa fa-twitter"></i></a>
+                        <a href="#!"><i class="fa fa-google-plus"></i></a>
+                        <a href="#!"><i class="fa fa-rss"></i></a>
+                        <a href="#!"><i class="fa fa-vimeo"></i></a>
+                        <a href="#!"><i class="fa fa-pinterest"></i></a>
+                        <a href="#!"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- /Start your project here-->
+
+
+<!-- SCRIPTS -->
+{% block js %}
+<!-- JQuery -->
+<script type="text/javascript" src="{{ asset('js/jquery-2.2.3.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/tether.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset ('js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/mdb.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.mixitup.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.magnific-popup.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/accordion.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+{% endblock %}
+
+<script>
+    $(".button-collapse").sideNav();
+</script>
+
+<!-- wow js active -->
+<script type="text/javascript">
+    new WOW().init();
+</script>
+
+
+
+
+</body>
+
+</html>
