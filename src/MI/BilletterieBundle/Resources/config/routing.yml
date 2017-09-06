@@ -6,3 +6,7 @@ mi_billetterie_choixbillet:
     path:     /Choix_Billet
     defaults: { _controller: MIBilletterieBundle:Home:choose }
 
+mi_billetterie_champsbillet:
+    path:     /Champs_Billet
+    defaults: { _controller: MIBilletterieBundle:Home:champs }
+

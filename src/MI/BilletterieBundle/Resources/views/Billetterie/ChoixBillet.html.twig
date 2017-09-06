@@ -3,17 +3,31 @@
 
 {% block Home %}
 
+    <h3>Choix du jour de visite</h3>
+    <div class="well">
+        {{ form_start(form, {'atr': {'class': 'form-horizontal'}}) }}
 
+        {#les erreurs générals du formulaire#}
 
+        {#Génération du label + error + champ Jour de la visite#}
+        {{ form_row(form.dateEntree) }}
 
+        <div class="form-group">
 
+            {{ form_label(form.NbBillet, "Nombre de Billets souhaités", {'label_attr': {'class': 'col-sm-2
+            contorl-label'}}) }}
 
+            {{ form_errors(form.NbBillet) }}
 
+            <div class="col-sm-10">
+                {{ form_widget(form.NbBillet, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
 
+        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}} ) }}
 
-
-
-
+        {{ form_end(form) }}
+    </div>
 
 
 {% endblock %}

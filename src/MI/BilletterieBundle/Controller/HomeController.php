@@ -2,8 +2,13 @@
 
 namespace MI\BilletterieBundle\Controller;
 
+
+use MI\BilletterieBundle\Entity\Commande;
+use MI\BilletterieBundle\Form\CommandeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 
 class HomeController extends Controller
 {
@@ -14,10 +19,31 @@ class HomeController extends Controller
         return new Response($content);
     }
 
-    public function chooseAction()
+    public function chooseAction(Request $request)
     {
-        $content = $this->get('templating')->render('MIBilletterieBundle:Billetterie:ChoixBillet.html.twig');
+        $Commande = new Commande();
 
-        return new Response($content);
+        $form = $this->createForm(CommandeType::class, $Commande);
+
+
+        if ($request->isMethod('GET') && $form->handleRequest($request)->isValid()){
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($Commande->getDateEntree());
+            $em->persist($Commande->setNbBillet());
+
+
+            $request->getSession()->getFlashBag()->add('Notice','C\'est disponible');
+
+            return $this->redirectToRoute('mi_billetterie_champsbillet');
+
+        }
+
+        return $this->render('MIBilletterieBundle:Billetterie:ChoixBillet.html.twig', array('form' => $form->createView()));
+
+    }
+    public function champsAction()
+    {
+
     }
 }
