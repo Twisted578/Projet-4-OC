@@ -1,12 +1,12 @@
 mi_billetterie_homepage:
-    path:     /Acceuil
+    path:     /Billetterie
     defaults: { _controller: MIBilletterieBundle:Home:index }
 
 mi_billetterie_choixbillet:
-    path:     /Choix_Billet
+    path:     /Billetterie/Choix_Billet
     defaults: { _controller: MIBilletterieBundle:Home:choose }
 
 mi_billetterie_champsbillet:
-    path:     /Champs_Billet
+    path:     /Billetterie/Champs_Billet
     defaults: { _controller: MIBilletterieBundle:Home:champs }
 

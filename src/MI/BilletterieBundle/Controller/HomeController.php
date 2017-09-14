@@ -3,7 +3,9 @@
 namespace MI\BilletterieBundle\Controller;
 
 
+use MI\BilletterieBundle\Entity\Billet;
 use MI\BilletterieBundle\Entity\Commande;
+use MI\BilletterieBundle\Form\BilletType;
 use MI\BilletterieBundle\Form\CommandeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,15 +23,16 @@ class HomeController extends Controller
 
     public function chooseAction(Request $request)
     {
+
         $Commande = new Commande();
 
-        $form = $this->createForm(CommandeType::class, $Commande);
+        $formC = $this->createForm(CommandeType::class, $Commande);
 
 
-        if ($request->isMethod('GET') && $form->handleRequest($request)->isValid()){
+        if ($request->isMethod('GET') && $formC->handleRequest($request)->isValid()){
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($Commande->getDateEntree());
+            $em->persist($Commande->setNbBillet());
             $em->persist($Commande->setNbBillet());
 
 
@@ -42,8 +45,21 @@ class HomeController extends Controller
         return $this->render('MIBilletterieBundle:Billetterie:ChoixBillet.html.twig', array('form' => $form->createView()));
 
     }
-    public function champsAction()
+    public function champsAction(Request $request)
     {
+
+        $Billet = new Billet();
+
+        $form = $this->createForm(BilletType::class, $Billet);
+
+        if ($request->isMethod('GET') && $form->handleRequest($request)->isValid()){
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($Billet);
+
+        }
+
+        return $this->render('MIBilletterieBundle:Billetterie:ChampsBillet.html.twig', array('form' => $form->createView()));
 
     }
 }

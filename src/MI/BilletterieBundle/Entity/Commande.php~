@@ -51,7 +51,18 @@ class Commande
      */
     private $dateEntree;
 
-    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bookingCode", type="string", length=255, unique=true)
+     */
+    private $bookingCode;
+
+    public function __construct()
+    {
+        $this->dateEntree = new \DateTime();
+    }
+
     /**
      * Get id
      *

@@ -47,9 +47,16 @@ class Commande
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_entree", type="DateTime")
+     * @ORM\Column(name="date_entree", type="datetime")
      */
     private $dateEntree;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bookingCode", type="string", length=255, unique=true)
+     */
+    private $bookingCode;
 
     public function __construct()
     {
@@ -165,4 +172,28 @@ class Commande
         return $this->dateEntree;
     }
 
+
+    /**
+     * Set bookingCode
+     *
+     * @param string $bookingCode
+     *
+     * @return Commande
+     */
+    public function setBookingCode($bookingCode)
+    {
+        $this->bookingCode = $bookingCode;
+
+        return $this;
+    }
+
+    /**
+     * Get bookingCode
+     *
+     * @return string
+     */
+    public function getBookingCode()
+    {
+        return $this->bookingCode;
+    }
 }

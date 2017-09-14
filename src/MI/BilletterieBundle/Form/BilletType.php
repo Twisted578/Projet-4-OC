@@ -2,8 +2,8 @@
 
 namespace MI\BilletterieBundle\Form;
 
-use Doctrine\DBAL\Types\IntegerType;
-use Doctrine\DBAL\Types\TextType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -21,10 +21,8 @@ class BilletType extends AbstractType
             ->add('nom',            TextType::class)
             ->add('prenom',         TextType::class)
             ->add('email',          EmailType::class)
-            ->add('age',            IntegerType::class)
-            ->add('reduc',          CheckboxType::class, array(
-                'Oui' => 1,
-            ))
+            ->add('age',            BirthdayType::class)
+            ->add('reduc',          CheckboxType::class)
             ->add('Commande');
     }
     

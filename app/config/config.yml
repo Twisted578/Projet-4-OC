@@ -74,3 +74,4 @@ swiftmailer:
 assetic:
   debug:          '%kernel.debug%'
   use_controller: '%kernel.debug%'
+
