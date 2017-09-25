@@ -659,7 +659,8 @@ div.panel.show {
 
 }
 #bite{
-    background-color: #0b51c5;
+    background-color: white;
     margin-top: 14%;
     margin-bottom: 30%;
+    border: solid black;
 }

@@ -3,6 +3,7 @@
 namespace MI\BilletterieBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Billet
@@ -24,6 +25,13 @@ class Billet
 
     /**
      * @var string
+     * @Assert\Length(
+     *     min = 2,
+     *     max = 30,
+     *     minMessage = "Votre nom doit comprendre au moins {{ limit }} caractères",
+     *     maxMessage = "Votre nom doit comprendre au maximum {{ limit }} caractères"
+     * )
+     * @Assert\Type(type="string")
      *
      * @ORM\Column(name="Nom", type="string", length=30)
      */
@@ -31,6 +39,13 @@ class Billet
 
     /**
      * @var string
+     * @Assert\Length(
+     *     min = 2,
+     *     max = 30,
+     *     minMessage = "Votre prénom doit comprendre au moins {{ limit }} caractères",
+     *     maxMessage = "Votre prénom doit comprendre au maximum {{ limit }} caractères"
+     * )
+     * @Assert\Type(type="string")
      *
      * @ORM\Column(name="Prenom", type="string", length=30)
      */
@@ -38,15 +53,19 @@ class Billet
 
     /**
      * @var string
+     * @Assert\Email(
+     *     message = "Votre Email '{{ value }}' n'est pas valide.",
+     *     checkMX = true
+     * )
      *
      * @ORM\Column(name="Email", type="string", length=50, unique=true)
      */
     private $email;
 
     /**
-     * @var int
+     * @var date
      *
-     * @ORM\Column(name="Age", type="smallint")
+     * @ORM\Column(name="Age", type="date")
      */
     private $age;
 
@@ -59,6 +78,7 @@ class Billet
 
     /**
      * @var bool
+     * @Assert\Type(type="bool")
      *
      * @ORM\Column(name="Reduc", type="boolean")
      */
@@ -181,7 +201,7 @@ class Billet
     /**
      * Set age
      *
-     * @param integer $age
+     * @param \DateTime $age
      *
      * @return Commande
      */
@@ -195,7 +215,7 @@ class Billet
     /**
      * Get age
      *
-     * @return int
+     * @return \DateTime
      */
     public function getAge()
     {
