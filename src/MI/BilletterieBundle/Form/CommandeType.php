@@ -2,7 +2,7 @@
 
 namespace MI\BilletterieBundle\Form;
 
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -31,7 +31,8 @@ class CommandeType extends AbstractType
                  '10'=>10,
             ),
            ))
-            ->add('dateEntree',     DateTimeType::class)
+            ->add('dateEntree',     DateType::class, array(
+                'format' => 'dd/MM/yyyy'))
             ->add('save',           SubmitType::class);
     }
     

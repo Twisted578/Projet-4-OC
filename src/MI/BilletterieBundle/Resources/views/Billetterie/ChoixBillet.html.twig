@@ -1,35 +1,55 @@
 {#On utilise le layout général#}
 {% extends "MIBilletterieBundle::layout.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/materialize.css') }}" xmlns="http://www.w3.org/1999/html">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+{% endblock %}
 
 {% block Home %}
 
+<div class="firstmenu">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-6 col-md-offset-2" id="bite">
+                            {{ form_start(form, {'atr': {'class': 'form-horizontal'}}) }}
 
-    <div class="well">
-        <h3>Choix du jour de visite</h3>
+                            {#les erreurs générals du formulaire#}
 
-        {{ form_start(form, {'atr': {'class': 'form-horizontal'}}) }}
+                            {#Génération du label + error + champ Jour de la visite#}
+                            {{ form_row(form.dateEntree) }}
 
-        {#les erreurs générals du formulaire#}
+                            <div class="form-group">
 
-        {#Génération du label + error + champ Jour de la visite#}
-        {{ form_row(form.dateEntree) }}
+                                {{ form_label(form.NbBillet, "Nombre de Billets souhaités", {'label_attr': {'class': 'col-sm-2 contorl-label'}}) }}
 
-        <div class="form-group">
+                                {{ form_errors(form.NbBillet) }}
 
-            {{ form_label(form.NbBillet, "Nombre de Billets souhaités", {'label_attr': {'class': 'col-sm-2
-            contorl-label'}}) }}
+                                <div class="col-sm-10">
+                                    {{ form_widget(form.NbBillet, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
 
-            {{ form_errors(form.NbBillet) }}
+                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}} ) }}
 
-            <div class="col-sm-10">
-                {{ form_widget(form.NbBillet, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
             </div>
         </div>
-
-        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}} ) }}
-
-        {{ form_end(form) }}
+        <div class="col-md-12"></div>
     </div>
+</div>
 
 
 {% endblock %}
+

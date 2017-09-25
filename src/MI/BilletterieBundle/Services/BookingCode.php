@@ -6,7 +6,7 @@
  * Time: 12:27
  */
 
-namespace MI\BilletterieBundle\Command;
+namespace MI\BilletterieBundle\Services;
 
 class BookingCode
 {

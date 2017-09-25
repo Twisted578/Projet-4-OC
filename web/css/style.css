@@ -652,4 +652,14 @@ div.panel.show {
 .main_coppyright .socail_coppyright a:hover i {
     color: #ec4848;
 }
+/*======================================================================
+            Sélection du jour et du nombre de billet style
+========================================================================*/
+.firstmenu{
 
+}
+#bite{
+    background-color: #0b51c5;
+    margin-top: 14%;
+    margin-bottom: 30%;
+}

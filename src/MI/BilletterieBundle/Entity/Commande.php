@@ -58,6 +58,12 @@ class Commande
      */
     private $bookingCode;
 
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Billet", mappedBy="Commande", cascade={"persist"})
+     */
+    private $Billet;
+
     public function __construct()
     {
         $this->dateEntree = new \DateTime();
@@ -195,5 +201,29 @@ class Commande
     public function getBookingCode()
     {
         return $this->bookingCode;
+    }
+
+    /**
+     * Get billet
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBillet()
+    {
+        return $this->Billet;
+    }
+
+
+    public function addTicket(Billet $billet)
+    {
+        $this->Billet[] = $billet;
+
+        return $this;
+    }
+
+
+    public function removeTicket(Billet $billet)
+    {
+        $this->Billet->removeElement($billet);
     }
 }

@@ -1,4 +1,31 @@
 services:
-#    mi_billetterie.example:
-#        class: MI\BilletterieBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+  mi_billetterie.BookingCode:
+    class: MI\BilletterieBundle\Services\BookingCode
+
+  mi_billetterie.ChildPrice:
+    class: MI\BilletterieBundle\Services\ChildPrice
+
+  mi_billetterie.GetPrice:
+    class: MI\BilletterieBundle\Services\GetPrice
+    arguments: ['@mi_billetterie.ChildPrice', '@mi_billetterie.ToddlerPrice', '@mi_billetterie.SeniorPrice']
+
+  mi_billetterie.HalfTicket:
+    class: MI\BilletterieBundle\Services\HalfTicket
+
+  mi_billetterie.SeniorPrice:
+    class: MI\BilletterieBundle\Services\SerniorPrice
+
+  mi_billetterie.ThousandTickets:
+    class: MI\BilletterieBundle\Services\ThousandTickets
+    arguments: ['@doctrine.orm.entity_manager']
+
+  mi_billetterie.TicketName:
+    class: MI\BilletterieBundle\Services\TicketName
+    arguments: ['@mi_billetterie.ChildPrice', '@mi_billetterie.ToddlerPrice', '@mi_billetterie.SeniorPrice']
+
+  mi_billetterie.ToddlerPrice:
+    class: MI\BilletterieBundle\Services\ToddlerPrice
+
+  mi_billetterie.MuseumClose:
+    class: MI\BilletterieBundle\Services\MuseumClose
+    arguments: ['@doctrine.orm.entity_manager']
