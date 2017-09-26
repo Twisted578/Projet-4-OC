@@ -7,7 +7,6 @@ use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -29,9 +28,10 @@ class BilletType extends AbstractType
                 'Journée' => 'J',
                 'Demi-Journée' => 'DJ'),
                 'choices_as_values' => true))
-            ->add('reduc',          CheckboxType::class, array(
-                'label' => 'Tarif réduit',
-                'required' => false))
+            ->add('reduc',          ChoiceType::class, array('choices' =>array(
+                'Non' => false,
+                'Oui' => true))
+            )
             ->add('Commande')
             ->add('save', SubmitType::class, array('label' => 'Valider'));
     }

@@ -35,6 +35,7 @@ class HomeController extends Controller
             $getDateEntree = $form->get('dateEntree')->getData();
             $getNbBillet = $form ->get('NbBillet')->getData();
             $_SESSION['NbBillet'] = $getNbBillet;
+            $_SESSION['dateEntree'] = $getDateEntree;
 
             //Test si il y a encore des billets
 
