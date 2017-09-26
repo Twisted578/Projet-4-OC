@@ -17,7 +17,7 @@ class AjaxController extends Controller
     {
         if ($req->isXMLHttpRequest())
         {
-            
+
         }
     }
 }
