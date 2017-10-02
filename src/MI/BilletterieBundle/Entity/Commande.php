@@ -3,7 +3,7 @@
 namespace MI\BilletterieBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use MI\BilletterieBundle\Validator\Constraints as MyAssert;
 /**
  * Commande
  *
@@ -32,8 +32,10 @@ class Commande
 
     /**
      * @var int
+     * @MyAssert\MoreThanThousandTickets()
      *
      * @ORM\Column(name="NbBillet", type="smallint")
+     *
      */
     private $NbBillet;
 
@@ -57,6 +59,13 @@ class Commande
      * @ORM\Column(name="bookingCode", type="string", length=255, unique=true)
      */
     private $bookingCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Type", type="string", length=2)
+     */
+    private $type;
 
     /**
      * @var ArrayCollection
@@ -214,7 +223,7 @@ class Commande
     }
 
 
-    public function addTicket(Billet $billet)
+    public function addBillet(Billet $billet)
     {
         $this->Billet[] = $billet;
 
@@ -222,8 +231,32 @@ class Commande
     }
 
 
-    public function removeTicket(Billet $billet)
+    public function removeBillet(Billet $billet)
     {
         $this->Billet->removeElement($billet);
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Commande
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

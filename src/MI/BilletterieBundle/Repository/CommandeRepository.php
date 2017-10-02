@@ -10,4 +10,14 @@ namespace MI\BilletterieBundle\Repository;
  */
 class CommandeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findTotalTickets($selectedDate)
+    {
+        $query = $this->createQueryBuilder('t')
+            ->where('t.dateEntree = :dateEntree')
+            ->setParameter('dateEntree', $selectedDate)
+            ->select('SUM(t.NbBillet)')
+            ->getQuery()
+            ;
+        return $query->getSingleScalarResult();
+    }
 }

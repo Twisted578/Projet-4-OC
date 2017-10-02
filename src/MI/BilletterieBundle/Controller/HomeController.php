@@ -27,23 +27,18 @@ class HomeController extends Controller
         $form = $this->createForm(CommandeType::class, $Commande);
 
 
-
-
         if ($form->handleRequest($request)->isValid()){
 
+            for ($i = 0; $i < $Commande->getNbBillet(); $i++){
+                $billet = new Billet();
+                $Commande->addBillet($billet);
+            }
 
             $getDateEntree = $form->get('dateEntree')->getData();
             $getNbBillet = $form ->get('NbBillet')->getData();
             $_SESSION['NbBillet'] = $getNbBillet;
             $_SESSION['dateEntree'] = $getDateEntree;
 
-            //Test si il y a encore des billets
-
-            $getThousandTickets = $this->container->get('mi_billetterie.ThousandTickets');
-
-            // Test si le jou est sélectionné est un mardi ou un jour férié
-
-            //$getMuseumClose = $this->container->get('mi_billetterie.MuseumClose');
 
             //Test pour empecher de commander un billet journée après 14H
 
@@ -52,11 +47,7 @@ class HomeController extends Controller
 
             $dateEntree = $em->getRepository('MIBilletterieBundle:Commande')->findBy(array('dateEntree' => $getDateEntree));
 
-            if ($getThousandTickets -> isThousandTickets($dateEntree, $getNbBillet) === true)
-            {
-                $this -> get('session')->getFlashbag() -> add('info', 'Le musée est complet pour cette date');
-                return $this -> redirectToRoute('mi_billetterie_choixbillet');
-            }elseif ($getHalfTicket === 'Journée' && $getHalfTicket -> isHalfTicket($date, $getDateEntree) === true)
+            if ($getHalfTicket === 'Journée' && $getHalfTicket -> isHalfTicket($date, $getDateEntree) === true)
             {
                 $this -> get('session') -> getFlashBag() -> add('info', 'Vous ne pouvez pas acheter un billet jornée après 14h pour aujourd\'hui');
                 return $this -> redirectToRoute('mi_billetterie_choixbillet');
@@ -72,7 +63,7 @@ class HomeController extends Controller
             $bookingcode = $getBookingCode -> generateCode();
             $Commande -> setBookingCode($bookingcode);
             $em->persist($Commande);
-            $em->flush();
+
 
             $request->getSession()->getFlashBag()->add('Notice','C\'est disponible');
 

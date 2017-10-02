@@ -10,3 +10,8 @@ mi_billetterie_champsbillet:
     path:     /Billetterie/Champs_Billet
     defaults: { _controller: MIBilletterieBundle:Home:champs }
 
+mi_billetterie_testform:
+    path:     /Billetterie/test_form
+    defaults: { _controller: MIBilletterieBundle:Ajax:testform }
+    methods:  [post]
+

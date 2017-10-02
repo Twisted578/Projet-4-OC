@@ -15,10 +15,6 @@ services:
   mi_billetterie.SeniorPrice:
     class: MI\BilletterieBundle\Services\SerniorPrice
 
-  mi_billetterie.ThousandTickets:
-    class: MI\BilletterieBundle\Services\ThousandTickets
-    arguments: ['@doctrine.orm.entity_manager']
-
   mi_billetterie.TicketName:
     class: MI\BilletterieBundle\Services\TicketName
     arguments: ['@mi_billetterie.ChildPrice', '@mi_billetterie.ToddlerPrice', '@mi_billetterie.SeniorPrice']
@@ -29,3 +25,10 @@ services:
   mi_billetterie.MuseumClose:
     class: MI\BilletterieBundle\Services\MuseumClose
     arguments: ['@doctrine.orm.entity_manager']
+
+  mi_billetterie.validator.MoreThanThousandTickets:
+    class: MI\BilletterieBundle\Validator\Constraints\MoreThanThousandTickets
+    arguments: ['@doctrine.orm.entity_manager']
+    scope: request
+    tags:
+        - { name: validator.constraint_validator, alias: mibilletterie_MoreThanThousandTickets}

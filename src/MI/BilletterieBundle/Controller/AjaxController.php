@@ -10,14 +10,19 @@ namespace MI\BilletterieBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class AjaxController extends Controller
 {
-    public function testForm ()
+    public function testFormAction (Request $req)
     {
         if ($req->isXMLHttpRequest())
         {
-            $data = $req->get('')
+            $donnees = $req->get($_SESSION['NbBillet'], $_SESSION['dateEntree']);
+            return new JsonResponse(array('data' => json_encode($donnees)));
         }
+        return new Response("Erreur : Ce n'est pas une requête Ajax", 400);
     }
 }

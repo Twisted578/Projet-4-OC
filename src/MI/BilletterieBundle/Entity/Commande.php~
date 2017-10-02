@@ -3,7 +3,7 @@
 namespace MI\BilletterieBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use MI\BilletterieBundle\Validator\Constraints as MyAssert;
 /**
  * Commande
  *
@@ -32,8 +32,10 @@ class Commande
 
     /**
      * @var int
+     * @MyAssert\MoreThanThousandTickets()
      *
      * @ORM\Column(name="NbBillet", type="smallint")
+     *
      */
     private $NbBillet;
 
@@ -57,6 +59,19 @@ class Commande
      * @ORM\Column(name="bookingCode", type="string", length=255, unique=true)
      */
     private $bookingCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Type", type="string", length=2)
+     */
+    private $type;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Billet", mappedBy="Commande", cascade={"persist"})
+     */
+    private $Billet;
 
     public function __construct()
     {
@@ -172,4 +187,52 @@ class Commande
         return $this->dateEntree;
     }
 
+
+    /**
+     * Set bookingCode
+     *
+     * @param string $bookingCode
+     *
+     * @return Commande
+     */
+    public function setBookingCode($bookingCode)
+    {
+        $this->bookingCode = $bookingCode;
+
+        return $this;
+    }
+
+    /**
+     * Get bookingCode
+     *
+     * @return string
+     */
+    public function getBookingCode()
+    {
+        return $this->bookingCode;
+    }
+
+    /**
+     * Get billet
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBillet()
+    {
+        return $this->Billet;
+    }
+
+
+    public function addBillet(Billet $billet)
+    {
+        $this->Billet[] = $billet;
+
+        return $this;
+    }
+
+
+    public function removeBillet(Billet $billet)
+    {
+        $this->Billet->removeElement($billet);
+    }
 }

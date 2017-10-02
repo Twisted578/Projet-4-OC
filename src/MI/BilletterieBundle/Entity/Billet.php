@@ -69,12 +69,7 @@ class Billet
      */
     private $age;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Type", type="string", length=2)
-     */
-    private $type;
+
 
     /**
      * @var bool
@@ -222,29 +217,6 @@ class Billet
         return $this->age;
     }
 
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Billet
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 
     /**
      * Set reduc
