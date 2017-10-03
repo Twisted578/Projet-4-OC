@@ -24,15 +24,10 @@ class BilletType extends AbstractType
             ->add('prenom',         TextType::class)
             ->add('email',          EmailType::class)
             ->add('age',            BirthdayType::class)
-            ->add('type',           ChoiceType::class, array('choices' => array(
-                'Journée' => 'J',
-                'Demi-Journée' => 'DJ'),
-                'choices_as_values' => true))
             ->add('reduc',          ChoiceType::class, array('choices' =>array(
                 'Non' => false,
                 'Oui' => true))
             )
-            ->add('Commande')
             ->add('save', SubmitType::class, array('label' => 'Valider'));
     }
     

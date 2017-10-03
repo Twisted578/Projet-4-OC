@@ -34,23 +34,23 @@ class HomeController extends Controller
                 $Commande->addBillet($billet);
             }
 
-            $getDateEntree = $form->get('dateEntree')->getData();
-            $getNbBillet = $form ->get('NbBillet')->getData();
-            $_SESSION['NbBillet'] = $getNbBillet;
-            $_SESSION['dateEntree'] = $getDateEntree;
+            //$getDateEntree = $form->get('dateEntree')->getData();
+            //$getNbBillet = $form ->get('NbBillet')->getData();
+            //$_SESSION['NbBillet'] = $getNbBillet;
+            //$_SESSION['dateEntree'] = $getDateEntree;
 
 
             //Test pour empecher de commander un billet journée après 14H
 
-            $getHalfTicket = $this->container->get('mi_billetterie.HalfTicket');
-            $date = new \DateTime();
+            //$getHalfTicket = $this->container->get('mi_billetterie.HalfTicket');
+            //$date = new \DateTime();
 
-            $dateEntree = $em->getRepository('MIBilletterieBundle:Commande')->findBy(array('dateEntree' => $getDateEntree));
+            //$dateEntree = $em->getRepository('MIBilletterieBundle:Commande')->findBy(array('dateEntree' => $getDateEntree));
 
-            if ($getHalfTicket === 'Journée' && $getHalfTicket -> isHalfTicket($date, $getDateEntree) === true)
+            //if ($getHalfTicket === 'Journée' && $getHalfTicket -> isHalfTicket($date, $getDateEntree) === true)
             {
-                $this -> get('session') -> getFlashBag() -> add('info', 'Vous ne pouvez pas acheter un billet jornée après 14h pour aujourd\'hui');
-                return $this -> redirectToRoute('mi_billetterie_choixbillet');
+              //  $this -> get('session') -> getFlashBag() -> add('info', 'Vous ne pouvez pas acheter un billet jornée après 14h pour aujourd\'hui');
+                //return $this -> redirectToRoute('mi_billetterie_choixbillet');
             }//elseif ($getMuseumClose -> isMuseumClose($dateEntree ,$year = null) === false)
             {
               //  $this -> get('session') -> getFlashBag() -> add('info', 'Le musée est fermé à cette date là.');
@@ -62,7 +62,6 @@ class HomeController extends Controller
             $getBookingCode = $this -> container -> get('mi_billetterie.BookingCode');
             $bookingcode = $getBookingCode -> generateCode();
             $Commande -> setBookingCode($bookingcode);
-            $em->persist($Commande);
 
 
             $request->getSession()->getFlashBag()->add('Notice','C\'est disponible');

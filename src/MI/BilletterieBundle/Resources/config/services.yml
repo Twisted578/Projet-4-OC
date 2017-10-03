@@ -25,10 +25,3 @@ services:
   mi_billetterie.MuseumClose:
     class: MI\BilletterieBundle\Services\MuseumClose
     arguments: ['@doctrine.orm.entity_manager']
-
-  mi_billetterie.validator.MoreThanThousandTickets:
-    class: MI\BilletterieBundle\Validator\Constraints\MoreThanThousandTickets
-    arguments: ['@doctrine.orm.entity_manager']
-    scope: request
-    tags:
-        - { name: validator.constraint_validator, alias: mibilletterie_MoreThanThousandTickets}

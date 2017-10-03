@@ -47,7 +47,13 @@ class CommandeType extends AbstractType
                     )),
                  ]
              ))
-            ->add('save',           SubmitType::class);
+            ->add('type',           ChoiceType::class, array('choices' => array(
+                'Journée' => 'J',
+                'Demi-Journée' => 'DJ'),
+                'choices_as_values' => true))
+            ->add('save',           SubmitType::class, array(
+                'label' => 'Valider'
+            ));
     }
 
     /**

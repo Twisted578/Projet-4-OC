@@ -10,53 +10,21 @@
 {% endblock %}
 
 {% block Home %}
-
-<div class="form-two-container" id="form-two-container">
-    <div class="row" id="form-two">
-        <div class="col-md-4"></div>
-        <div class="firstmenu col-md-4">
+<div class="firstmenu" style="background-color: grey">
+    <div class="col-lg-12">
+        <h1 class="museeh1">Détails des Billets</h1>
+        <h2 class="musee">Musée du Louvre</h2>
+        <div class="col-md-3" style="background-color: blue"></div>
+        <div class="col-md-6" id="form">
             {{ form_start(form) }}
-            {{ form_errors(form) }}
-
-            <div class="row">
-                <div class="">
-                    {{ form_label(form.nom, "Nom :", {'label_attr': {'class': 'control-label col-sm-12 col-md-5'}}) }}
-                    {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.nom) }}
-                </div>
-                <div class="">
-                    {{ form_label(form.prenom, "Prénom :", {'label_attr': {'class': 'control-label col-sm-12 col-md-5'}}) }}
-                    {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.prenom) }}
-                </div>
-                <div class="">
-                    {{ form_label(form.email, "Email :", {'label_attr': {'class': 'control-label col-sm-12 col-md-5'}}) }}
-                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.email) }}
-                </div>
-                <div class="">
-                    {{ form_label(form.age, "Date de Naissance :", {'label_attr': {'class': 'control-label col-sm-12 col-md-5'}}) }}
-                    {{ form_widget(form.age, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.age) }}
-                </div>
-                <div class="">
-                    {{ form_label(form.type, "Type de Billet :", {'label_attr': {'class': 'control-label col-sm-12 col-md-5'}}) }}
-                    {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.type) }}
-                </div>
-                <div class="reduc">
-                    {{ form_label(form.reduc, "Tarif Réduit :", {'label_attr': {'class': 'control-label col-sm-12 col-md-5'}}) }}
-                    {{ form_widget(form.reduc, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.reduc) }}
-                </div>
-                <div class="row col-sm-12">
-                    {{ form_widget(form.save, {'attr': {'class': 'col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-2 btn btn-primary'}}) }}
-                </div>
-            </div>
+            {{ form_widget(form) }}
+            {{ form_errors (form) }}
+            {{ form_end(form) }}
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-3" style="background-color: red"></div>
     </div>
 </div>
+
 
 
 {% endblock %}

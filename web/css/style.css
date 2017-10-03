@@ -656,17 +656,22 @@ div.panel.show {
             Sélection du jour et du nombre de billet style
 ========================================================================*/
 .firstmenu{
-
+    background-color: grey;
 }
-#bite{
+#form{
     background-color: white;
-    margin-top: 14%;
-    margin-bottom: 30%;
-    border: solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 10px;
 }
 .form-two-container{
     margin-bottom: 30%;
 }
-.reduc{
-
+.musee{
+    display: flex;
+    justify-content: center;
+}
+.museeh1{
+    display: flex;
+    justify-content: center;
 }

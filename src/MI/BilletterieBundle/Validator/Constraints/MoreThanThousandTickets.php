@@ -20,8 +20,5 @@ class MoreThanThousandTickets extends Constraint
 {
     public $message = 'Le nombre de billets vendus a atteint son maximum (1000).';
 
-    public function validatedBy()
-    {
-        return 'mibilletterie_MoreThanThousandTickets';
-    }
+
 }
