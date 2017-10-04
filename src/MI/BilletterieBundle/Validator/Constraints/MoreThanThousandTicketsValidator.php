@@ -15,19 +15,20 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 class MoreThanThousandTicketsValidator extends ConstraintValidator
 {
-    protected $entityManager;
-    protected $request;
+    private $requestStack;
+    private $em;
 
-    public function __construct(EntityManager $em, RequestStack $request)
+    public function __construct(RequestStack $requestStack ,EntityManager $em)
     {
-        $this->entityManager = $em;
-        $this->request = $request;
+        $this->requestStack = $requestStack;
+        $this->em           = $em;
     }
 
     public function validate($value, Constraint $constraint)
     {
+
         //Recherche la requete
-        $request = $this->request->getCurrentRequest();
+        $request = $this->requestStack->getCurrentRequest();
 
         //Recherche de la date séléctionné
         $selectedDate = $request->request->get('mi_billetteriebundle_choixbillet')['dateEntree'];
@@ -35,10 +36,10 @@ class MoreThanThousandTicketsValidator extends ConstraintValidator
         //Nb de bilets demandé par l'utilisateur
         $nbOfTickets = $request->request->get('mi_billetteriebundle_choixbillet')['NbBillet'];
 
-        $em = $this->entityManager;
+        $em = $this->em;
 
         //Recherche de toutes les réservation faites à cette même date
-        $totalTicket = $em->getRepository('MiBilletterieBundle:Commande')->findTotalTickets(\DateTime::createFromFormat('d/m/Y', $selectedDate));
+        $totalTicket = $em->getRepository('MIBilletterieBundle:Commande')->findTotalTickets(\DateTime::createFromFormat('d/m/Y', $selectedDate));
 
         $remainingTickets = 1000 - $totalTicket;
 

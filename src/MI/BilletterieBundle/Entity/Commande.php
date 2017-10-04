@@ -3,7 +3,8 @@
 namespace MI\BilletterieBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use MI\BilletterieBundle\Validator\Constraints as MyAssert;
+use MI\BilletterieBundle\Validator\Constraints as Assert;
+use MI\BilletterieBundle\Validator\Constraints\MoreThanThousandTickets;
 /**
  * Commande
  *
@@ -32,7 +33,7 @@ class Commande
 
     /**
      * @var int
-     * @MyAssert\MoreThanThousandTickets()
+     * @MoreThanThousandTickets()
      *
      * @ORM\Column(name="NbBillet", type="smallint")
      *

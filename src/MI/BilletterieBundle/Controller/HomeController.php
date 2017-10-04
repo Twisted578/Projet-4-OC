@@ -22,39 +22,17 @@ class HomeController extends Controller
 
     public function chooseAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
         $Commande = new Commande();
         $form = $this->createForm(CommandeType::class, $Commande);
 
 
         if ($form->handleRequest($request)->isValid()){
 
+            // On boucle pour récupérer le nombre de form à afficher en fonctions du nb de billets voulu
+
             for ($i = 0; $i < $Commande->getNbBillet(); $i++){
                 $billet = new Billet();
                 $Commande->addBillet($billet);
-            }
-
-            //$getDateEntree = $form->get('dateEntree')->getData();
-            //$getNbBillet = $form ->get('NbBillet')->getData();
-            //$_SESSION['NbBillet'] = $getNbBillet;
-            //$_SESSION['dateEntree'] = $getDateEntree;
-
-
-            //Test pour empecher de commander un billet journée après 14H
-
-            //$getHalfTicket = $this->container->get('mi_billetterie.HalfTicket');
-            //$date = new \DateTime();
-
-            //$dateEntree = $em->getRepository('MIBilletterieBundle:Commande')->findBy(array('dateEntree' => $getDateEntree));
-
-            //if ($getHalfTicket === 'Journée' && $getHalfTicket -> isHalfTicket($date, $getDateEntree) === true)
-            {
-              //  $this -> get('session') -> getFlashBag() -> add('info', 'Vous ne pouvez pas acheter un billet jornée après 14h pour aujourd\'hui');
-                //return $this -> redirectToRoute('mi_billetterie_choixbillet');
-            }//elseif ($getMuseumClose -> isMuseumClose($dateEntree ,$year = null) === false)
-            {
-              //  $this -> get('session') -> getFlashBag() -> add('info', 'Le musée est fermé à cette date là.');
-              //  return $this -> redirectToRoute('mi_billetterie_choixbillet');
             }
 
             // génération du numéro de commande
@@ -64,8 +42,9 @@ class HomeController extends Controller
             $Commande -> setBookingCode($bookingcode);
 
 
-            $request->getSession()->getFlashBag()->add('Notice','C\'est disponible');
+            // enregistrement des données du premier form en session
 
+            $this->get('session')->set('Commande', $Commande);
             return $this->redirectToRoute('mi_billetterie_champsbillet');
 
         }

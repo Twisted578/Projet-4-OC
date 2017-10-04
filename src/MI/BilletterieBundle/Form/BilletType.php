@@ -46,7 +46,7 @@ class BilletType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'mi_billetteriebundle_billet';
+        return 'MI_BilletterieBundle_billet';
     }
 
 

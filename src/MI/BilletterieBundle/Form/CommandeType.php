@@ -21,6 +21,7 @@ class CommandeType extends AbstractType
     {
         $builder
             ->add('NbBillet',       ChoiceType::class, array(
+             'required' => true,
              'choices' => array(
                  '1' => 1,
                  '2' => 2,
@@ -36,6 +37,7 @@ class CommandeType extends AbstractType
            ))
             ->add('dateEntree',     DateType::class, array(
                 'attr' => ['class' => 'js-datepicker'],
+                'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
                 'required' => true,
                 'constraints' => [
@@ -47,10 +49,15 @@ class CommandeType extends AbstractType
                     )),
                  ]
              ))
-            ->add('type',           ChoiceType::class, array('choices' => array(
-                'Journée' => 'J',
-                'Demi-Journée' => 'DJ'),
-                'choices_as_values' => true))
+            ->add('type', ChoiceType::class, array(
+                'choices' => array(
+                    'Demi-journée' => 'demi-journée',
+                    'Journée' => 'journée',
+                ),
+                'multiple' => false,
+                'attr' => ['class' => 'radio-demi'],
+                'required' => true,
+            ))
             ->add('save',           SubmitType::class, array(
                 'label' => 'Valider'
             ));
@@ -117,7 +124,7 @@ class CommandeType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'mi_billetteriebundle_commande';
+        return 'MI_BilletteriebBundle_commande';
     }
 
 
