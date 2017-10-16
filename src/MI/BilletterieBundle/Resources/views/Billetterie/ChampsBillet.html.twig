@@ -16,12 +16,26 @@
         <h2 class="musee">Musée du Louvre</h2>
         <div class="col-md-3" style="background-color: blue"></div>
         <div class="col-md-6" id="formclone2">
-                {{ form_start(form) }}
-                {{ form_widget(form) }}
-                {{ form_errors (form) }}
-                {{ form_end(form) }}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_errors (form) }}
+            <p class="form-buttons text-right">
+                <button type="submit" class="btn go-back" id="go-back">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Retour
+                </button>
+                <button type="submit" class="btn continuer-button" id="continuer">Continuer</button>
+            </p>
+            {{ form_end(form) }}
         </div>
         <div class="col-md-3" style="background-color: red"></div>
+        <div class="col-xs-12 col-sm-3">
+            <div class="summary" style="color: white">
+                <h4><span class="glyphicon glyphicon-shopping-cart"></span> Votre réservation</h4>
+                <p>Date de votre réservation : {{ app.session.get('Commande').dateEntree|date('d/m/Y') }}</p>
+                <p>Type de billet choisi : {{ app.session.get('Commande').type }}</p>
+                <p>Nombre de billets : {{ app.session.get('Commande').NbBillet }}</p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -27,8 +27,7 @@ class BilletType extends AbstractType
             ->add('reduc',          ChoiceType::class, array('choices' =>array(
                 'Non' => false,
                 'Oui' => true))
-            )
-            ->add('save', SubmitType::class, array('label' => 'Valider'));
+            );
     }
     
     /**
