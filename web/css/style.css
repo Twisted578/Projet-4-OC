@@ -658,7 +658,7 @@ div.panel.show {
 .firstmenu{
     background-color: grey;
 }
-#form{
+#form, #formclone2{
     background-color: white;
     margin-top: 100px;
     margin-bottom: 100px;

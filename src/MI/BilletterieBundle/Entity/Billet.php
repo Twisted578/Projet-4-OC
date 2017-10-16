@@ -104,7 +104,7 @@ class Billet
     private $commandeId;
 
     /**
-     * @ORM\ManyToOne(targetEntity="MI\BilletterieBundle\Entity\Commande")
+     * @ORM\ManyToOne(targetEntity="MI\BilletterieBundle\Entity\Commande", inversedBy="billets", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $Commande;
@@ -323,7 +323,7 @@ class Billet
      *
      * @return Billet
      */
-    public function setCommande(\MI\BilletterieBundle\Entity\Commande $commande)
+    public function setCommande(Commande $commande = null)
     {
         $this->Commande = $commande;
 

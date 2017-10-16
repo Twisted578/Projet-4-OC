@@ -72,7 +72,7 @@ class Commande
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Billet", mappedBy="Commande", cascade={"persist"})
      */
-    private $Billet;
+    private $billets;
 
     public function __construct()
     {
@@ -218,23 +218,23 @@ class Commande
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getBillet()
+    public function getbillet()
     {
-        return $this->Billet;
+        return $this->billets;
     }
 
 
-    public function addBillet(Billet $billet)
+    public function addbillet(\MI\BilletterieBundle\Entity\Billet $billet)
     {
-        $this->Billet[] = $billet;
+        $this->billets[] = $billet;
 
         return $this;
     }
 
 
-    public function removeBillet(Billet $billet)
+    public function removebillet(\MI\BilletterieBundle\Entity\Billet $billet)
     {
-        $this->Billet->removeElement($billet);
+        $this->billets->removeElement($billet);
     }
 
     /**

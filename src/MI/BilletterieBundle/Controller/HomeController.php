@@ -7,6 +7,7 @@ use MI\BilletterieBundle\Entity\Billet;
 use MI\BilletterieBundle\Entity\Commande;
 use MI\BilletterieBundle\Form\BilletType;
 use MI\BilletterieBundle\Form\CommandeType;
+use MI\BilletterieBundle\Form\InfoStepType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -54,19 +55,23 @@ class HomeController extends Controller
     }
     public function champsAction(Request $request)
     {
+        $Commande = $this->get('session')->get('Commande');
 
-        $Billet = new Billet();
+        if (!$Commande)
+            throw new \Exception();
 
-        $form = $this->createForm(BilletType::class, $Billet);
 
-        if ($request->isMethod('GET') && $form->handleRequest($request)->isValid()){
+        $form = $this->createForm(InfoStepType::class, $Commande);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($Billet);
+
+        if ($form->handleRequest($request)->isValid()){
+
+            $this->get('session')->set('Commande', $Commande);
+            return $this->redirectToRoute('paiement');
 
         }
 
-        return $this->render('MIBilletterieBundle:Billetterie:ChampsBillet.html.twig', array('form' => $form->createView()));
+        return $this->render('MIBilletterieBundle:Billetterie:ChampsBillet.html.twig', array('form' => $form ->createView()));
 
     }
 }
