@@ -75,3 +75,6 @@ assetic:
   debug:          '%kernel.debug%'
   use_controller: '%kernel.debug%'
 
+# Stripe Configuration
+flosch_stripe:
+    stripe_api_key: "pk_test_shD23B5uunMft5ppuyTOCVsJ" # The Stripe API key can be added as a symfony parameter

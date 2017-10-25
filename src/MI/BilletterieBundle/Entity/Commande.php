@@ -2,6 +2,7 @@
 
 namespace MI\BilletterieBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use MI\BilletterieBundle\Validator\Constraints as Assert;
 use MI\BilletterieBundle\Validator\Constraints\MoreThanThousandTickets;
@@ -70,13 +71,14 @@ class Commande
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Billet", mappedBy="Commande", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Billet", mappedBy="Commande", cascade={"persist", "remove"})
      */
     private $billets;
 
     public function __construct()
     {
         $this->dateEntree = new \DateTime();
+        $this->billets    = new ArrayCollection();
     }
 
     /**

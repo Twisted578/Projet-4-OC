@@ -15,3 +15,10 @@ mi_billetterie_testform:
     defaults: { _controller: MIBilletterieBundle:Ajax:testform }
     methods:  [post]
 
+mi_billetterie_paiementbillet:
+    path:     /Billetterie/paiement_billet
+    defaults: { _controller: MIBilletterieBundle:Home:Paiement }
+
+mi_billetterie_checkoutbillet:
+    path:     /Billetterie/checkout_billet
+    defaults: { _controller: MIBilletterieBundle:Home:checkout }

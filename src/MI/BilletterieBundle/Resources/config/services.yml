@@ -31,3 +31,13 @@ services:
     arguments: ['@request_stack' ,'@doctrine.orm.entity_manager']
     tags:
         - { name: validator.constraint_validator, alias: mi_billetteriebundle_MoreThanThousandTickets}
+
+  mi_billetterie.price:
+      class: MI\BilletterieBundle\Services\Price
+
+
+  my.stripe.client:
+      alias: MI\BilletterieBundle\Stripe\StripeClient
+
+  mi_billetterie.Email:
+      class: MI\BilletterieBundle\Services\Email
