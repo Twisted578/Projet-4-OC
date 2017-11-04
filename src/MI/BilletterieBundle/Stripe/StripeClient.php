@@ -12,7 +12,7 @@ use Flosch\Bundle\StripeBundle\Stripe\StripeClient as BaseStripeClient;
 
 class StripeClient extends BaseStripeClient
 {
-    public function __construct($stripeApiKey = '')
+    public function __construct($stripeApiKey = 'sk_test_QxkgCNe5x2ShX2kpjrv6IRfI')
     {
         parent::__construct($stripeApiKey);
 

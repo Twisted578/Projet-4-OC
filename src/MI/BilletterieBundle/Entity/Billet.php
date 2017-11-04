@@ -80,28 +80,12 @@ class Billet
     private $reduc;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="Tarif", type="string", length=6)
-     */
-    private $tarif;
-
-
-    /**
      * @var int
      *
      * @ORM\Column(name="Prix", type="smallint")
      */
     private $prix;
 
-
-    /**
-     * @/**
-     * @var int
-     *
-     * @ORM\Column(name="Commande_id", type="integer")
-     */
-    private $commandeId;
 
     /**
      * @ORM\ManyToOne(targetEntity="MI\BilletterieBundle\Entity\Commande", inversedBy="billets", cascade={"persist", "remove"})
@@ -242,29 +226,6 @@ class Billet
         return $this->reduc;
     }
 
-    /**
-     * Set tarif
-     *
-     * @param string $tarif
-     *
-     * @return Billet
-     */
-    public function setTarif($tarif)
-    {
-        $this->tarif = $tarif;
-
-        return $this;
-    }
-
-    /**
-     * Get tarif
-     *
-     * @return string
-     */
-    public function getTarif()
-    {
-        return $this->tarif;
-    }
 
 
     /**
@@ -290,31 +251,6 @@ class Billet
     {
         return $this->prix;
     }
-
-    /**
-     * Set commandeId
-     *
-     * @param integer $commandeId
-     *
-     * @return Billet
-     */
-    public function setCommandeId($commandeId)
-    {
-        $this->commandeId = $commandeId;
-
-        return $this;
-    }
-
-    /**
-     * Get commandeId
-     *
-     * @return int
-     */
-    public function getCommandeId()
-    {
-        return $this->commandeId;
-    }
-
 
     /**
      * Set commande

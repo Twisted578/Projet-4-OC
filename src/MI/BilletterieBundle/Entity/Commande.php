@@ -23,15 +23,6 @@ class Commande
      */
     private $id;
 
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="PrixTotal", type="smallint")
-     */
-    private $prixTotal;
-
-
     /**
      * @var int
      * @MoreThanThousandTickets()
@@ -40,13 +31,6 @@ class Commande
      *
      */
     private $NbBillet;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="Date_achat", type="datetime", unique=true)
-     */
-    private $dateAchat;
 
     /**
      * @var \DateTime
@@ -65,12 +49,11 @@ class Commande
     /**
      * @var string
      *
-     * @ORM\Column(name="Type", type="string", length=2)
+     * @ORM\Column(name="Type", type="string", length=50)
      */
     private $type;
 
     /**
-     * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Billet", mappedBy="Commande", cascade={"persist", "remove"})
      */
     private $billets;
@@ -90,34 +73,6 @@ class Commande
     {
         return $this->id;
     }
-
-
-
-    /**
-     * Set prixTotal
-     *
-     * @param integer $prixTotal
-     *
-     * @return Commande
-     */
-    public function setPrixTotal($prixTotal)
-    {
-        $this->prixTotal = $prixTotal;
-
-        return $this;
-    }
-
-    /**
-     * Get prixTotal
-     *
-     * @return int
-     */
-    public function getPrixTotal()
-    {
-        return $this->prixTotal;
-    }
-
-
     /**
      * Set NbBillet
      *
@@ -140,30 +95,6 @@ class Commande
     public function getNbBillet()
     {
         return $this->NbBillet;
-    }
-
-    /**
-     * Set dateAchat
-     *
-     * @param \DateTime $dateAchat
-     *
-     * @return Commande
-     */
-    public function setDateAchat($dateAchat)
-    {
-        $this->dateAchat = $dateAchat;
-
-        return $this;
-    }
-
-    /**
-     * Get dateAchat
-     *
-     * @return \DateTime
-     */
-    public function getDateAchat()
-    {
-        return $this->dateAchat;
     }
 
     /**
@@ -225,7 +156,13 @@ class Commande
         return $this->billets;
     }
 
-
+    /**
+     * Add Billet
+     *
+     * @param \MI\BilletterieBundle\Entity\Billet $billet
+     *
+     * @return Commande
+     */
     public function addbillet(\MI\BilletterieBundle\Entity\Billet $billet)
     {
         $this->billets[] = $billet;
@@ -233,7 +170,11 @@ class Commande
         return $this;
     }
 
-
+    /**
+     * Remove billet
+     *
+     * @param \MI\BilletterieBundle\Entity\Billet $billet
+     */
     public function removebillet(\MI\BilletterieBundle\Entity\Billet $billet)
     {
         $this->billets->removeElement($billet);

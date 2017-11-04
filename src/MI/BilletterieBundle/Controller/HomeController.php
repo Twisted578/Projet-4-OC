@@ -92,9 +92,9 @@ class HomeController extends Controller
         $bookingPrice = $prix;
         $Commande = $this->get('session')->get('Commande');
 
-        \Stripe\Stripe::setApiKey("pk_test_shD23B5uunMft5ppuyTOCVsJ");
+        \Stripe\Stripe::setApiKey("sk_test_4FK9xr4ez1rkP0ePugL7y4Y8");
         $token = $_POST['stripeToken'];
-
+        var_dump($token);
        try{
             $charge = \Stripe\Charge::create(array(
                 "amount" => $prix."00",
@@ -110,7 +110,7 @@ class HomeController extends Controller
             $em->persist($session->get('Commande'));
             $em->flush();
 
-            foreach ($Commande->getbillet() as $billet)
+            foreach ($Commande->getBillet() as $billet)
             {
                 $billet->setCommande($Commande);
                 $em->persist($billet);
@@ -126,6 +126,6 @@ class HomeController extends Controller
            $session->getFlashBag()->add("Error", "Le paiement a échoué. Veuillez recommencer.");
            return $this->redirectToRoute("mi_billetterie_paiementbillet");
        }
-    var_dump($Commande);
+
     }
 }

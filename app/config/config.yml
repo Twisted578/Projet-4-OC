@@ -77,4 +77,4 @@ assetic:
 
 # Stripe Configuration
 flosch_stripe:
-    stripe_api_key: "pk_test_shD23B5uunMft5ppuyTOCVsJ" # The Stripe API key can be added as a symfony parameter
+    stripe_api_key: "sk_test_4FK9xr4ez1rkP0ePugL7y4Y8" # The Stripe API key can be added as a symfony parameter
