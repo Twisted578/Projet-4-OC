@@ -43,6 +43,8 @@ class Commande
      * @var string
      *
      * @ORM\Column(name="bookingCode", type="string", length=255, unique=true)
+     *
+     * @ORM\OneToMany(targetEntity="Billet", mappedBy="Commande", cascade={"persist", "remove"})
      */
     private $bookingCode;
 
@@ -53,10 +55,7 @@ class Commande
      */
     private $type;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Billet", mappedBy="Commande", cascade={"persist", "remove"})
-     */
-    private $billets;
+
 
     public function __construct()
     {
@@ -170,15 +169,6 @@ class Commande
         return $this;
     }
 
-    /**
-     * Remove billet
-     *
-     * @param \MI\BilletterieBundle\Entity\Billet $billet
-     */
-    public function removebillet(\MI\BilletterieBundle\Entity\Billet $billet)
-    {
-        $this->billets->removeElement($billet);
-    }
 
     /**
      * Set type

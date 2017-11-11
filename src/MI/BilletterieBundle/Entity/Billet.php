@@ -58,7 +58,7 @@ class Billet
      *     checkMX = true
      * )
      *
-     * @ORM\Column(name="Email", type="string", length=50, unique=true)
+     * @ORM\Column(name="Email", type="string", length=50, unique=false)
      */
     private $email;
 
@@ -88,7 +88,7 @@ class Billet
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="MI\BilletterieBundle\Entity\Commande", inversedBy="billets", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="MI\BilletterieBundle\Entity\Commande", inversedBy="bookingCode", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $Commande;

@@ -94,7 +94,7 @@ class HomeController extends Controller
 
         \Stripe\Stripe::setApiKey("sk_test_4FK9xr4ez1rkP0ePugL7y4Y8");
         $token = $_POST['stripeToken'];
-        var_dump($token);
+
        try{
             $charge = \Stripe\Charge::create(array(
                 "amount" => $prix."00",

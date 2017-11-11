@@ -1,3 +1,10 @@
 mi_billetterie:
     resource: "@MIBilletterieBundle/Resources/config/routing.yml"
     prefix:   /
+
+root:
+    path: /
+    defaults:
+        _controller: MIBilletterieBundle:Home:index
+        path: /Billetterie
+        permanent: true
