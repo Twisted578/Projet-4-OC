@@ -1,0 +1,27 @@
+{#On utilise le layout général#}
+{% extends "MIBilletterieBundle::layout.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/materialize.css') }}" xmlns="http://www.w3.org/1999/html">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+{% endblock %}
+
+{% block Home %}
+    <div class="firstmenu"  id="formClone1">
+        <div class="col-lg-12">
+            <h1 class="museeh1">Page de remerciement</h1>
+            <h2 class="musee">Musée du Louvre</h2>
+            <div class="col-md-3" style="background-color: blue"></div>
+            <div class="col-md-6" id="formclone2">
+                <h2 class="merci">Merci pour votre achat !</h2>
+                <a type="button" class="btn btn-danger m-t-3 waves-effect waves-red" id="acceuil_bouton" href="{{ path('mi_billetterie_homepage') }}">Acceuil</a>
+            </div>
+            <div class="col-md-3" style="background-color: red"></div>
+            <div class="col-xs-12 col-sm-3">
+            </div>
+        </div>
+    </div>
+{% endblock %}

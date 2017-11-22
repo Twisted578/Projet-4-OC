@@ -4,6 +4,7 @@ namespace MI\BilletterieBundle\Form;
 
 use Symfony\Component\DependencyInjection\Tests\Compiler\C;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\AbstractType;
@@ -24,6 +25,9 @@ class BilletType extends AbstractType
             ->add('prenom',         TextType::class)
             ->add('email',          EmailType::class)
             ->add('age',            BirthdayType::class)
+            ->add('pays',           CountryType::class, array(
+                'placeholder' => 'Choisissez votre pays',
+            ))
             ->add('reduc',          ChoiceType::class, array('choices' =>array(
                 'Non' => false,
                 'Oui' => true))

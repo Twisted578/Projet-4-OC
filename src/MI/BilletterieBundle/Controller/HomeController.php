@@ -117,11 +117,22 @@ class HomeController extends Controller
             }
             $em->flush();
 
-            $this->get('mi_billetterie.Email')->sendEmail($Commande, $clientEmail, $bookingPrice);
+
+           $mailer = $this->get('mailer');
+           $message = (new \Swift_Message('Réservation'))
+               ->setContentType("text/html")
+               ->setSubject('Confirmation de réservation pour le musée du Louvre')
+               ->setFrom('guenole578@gmail.com')
+               ->setTo($clientEmail)
+               ->setBody($this->render('Emails/reservation.html.twig', array(
+                   'Commande' => $Commande,
+                   'bookingPrice' => $bookingPrice,
+               )));
+           $mailer->send($message);
 
             $session->invalidate();
 
-           return $this->render('Billetterie/sucess.html.twig');
+           return $this->render('Emails/sucess.html.twig');
         } catch (\Stripe\Error\Card $e){
            $session->getFlashBag()->add("Error", "Le paiement a échoué. Veuillez recommencer.");
            return $this->redirectToRoute("mi_billetterie_paiementbillet");

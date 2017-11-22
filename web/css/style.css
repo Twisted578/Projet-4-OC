@@ -675,3 +675,12 @@ div.panel.show {
     display: flex;
     justify-content: center;
 }
+.merci{
+    display: flex;
+    color: black;
+    justify-content: center;
+}
+#acceuil_bouton{
+    display: flex;
+    justify-content: center;
+}

@@ -23,7 +23,8 @@ class Email
 
     public function sendEmail($Commande, $email, $bookingPrice)
     {
-        $message = \Swift_Message::newInstance()
+        $mailer = $this->get('mailer');
+        $message = (new \Swift_Message('Réservation'))
             ->setContentType("text/html")
             ->setSubject('Confirmation de réservation pour le musée du Louvre')
             ->setFrom('guenole578@gmail.com')
@@ -32,6 +33,6 @@ class Email
                 'Commande' => $Commande,
                 'bookingPrice' => $bookingPrice,
             )));
-        $this->mailer->send($message);
+        $mailer->send($message);
     }
 }

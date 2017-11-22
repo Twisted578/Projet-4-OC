@@ -69,6 +69,11 @@ class Billet
      */
     private $age;
 
+    /**
+     * @var string
+     * @ORM\Column(name="pays", type="string", length=255)
+     */
+    private $pays;
 
 
     /**
@@ -199,6 +204,27 @@ class Billet
     public function getAge()
     {
         return $this->age;
+    }
+
+    /**
+     * Set pays
+     * @param string $pays
+     * @return Billet
+     */
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     * @return string
+     */
+    public function getPays()
+    {
+        return $this->pays;
     }
 
 
