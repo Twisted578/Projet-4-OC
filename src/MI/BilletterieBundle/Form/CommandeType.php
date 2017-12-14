@@ -95,7 +95,8 @@ class CommandeType extends AbstractType
                      * de billet sélectionné est "journée" et qu'il est plus de 14h, la réservation
                      * n'est pas permise.
                      */
-                    if($selectedDate === $today && $selectedType === "journée") {
+
+                   if($selectedDate === $today && $selectedType === "journée") {
                         if($presentTime >= "14:00:00" && $presentTime <= "23:59:59") {
                             $context
                                 ->buildViolation('Vous ne pouvez pas réserver de billet "Journée" après 14h.')
@@ -107,7 +108,15 @@ class CommandeType extends AbstractType
                          * Si la date sélectionnée dans le datepicker correspond à l'une des dates présentes
                          * dans le tableau des jours fériés français, la réservation n'est pas permise.
                          */
-                    } else if(in_array($formattedDate, $holidays)) {
+                    }else if ($selectedDate === $today && $selectedType === "demi-journée"){
+                       if ($presentTime >= "19:00:00"){
+                           $context
+                               ->buildViolation('Vous ne pouvez pas réserver un billet pour aujourd\'hui. Le musée est fermé.')
+                               ->atPath('type')
+                               ->addViolation()
+                               ;
+                       }
+                   } else if(in_array($formattedDate, $holidays)) {
                         $context
                             ->buildViolation('Impossible de réserver pour les jours fériés')
                             ->atPath('date')
