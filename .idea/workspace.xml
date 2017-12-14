@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b41ad29d-5448-43ac-aaf6-241d8d0f179f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery-2.2.3.js" afterPath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery-2.2.3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery.magnific-popup.js" afterPath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery.magnific-popup.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/MI/BilletterieBundle/Tests/Controller/DefaultControllerTest.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/mdb.js" afterPath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/mdb.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandeType.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommandeType.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Form/CommandeType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="116" column="32" lean-forward="false" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+            <state relative-caret-position="329">
+              <caret line="106" column="14" lean-forward="true" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
               <folding>
                 <element signature="e#45#101#0#PHP" expanded="true" />
               </folding>
@@ -64,56 +62,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/bootstrap.js">
+      <file leaf-file-name="phpunit.xml.dist" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="2418" column="16" lean-forward="false" selection-start-line="2418" selection-start-column="16" selection-end-line="2418" selection-end-column="16" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery-2.2.3.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery-2.2.3.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="3909" column="0" lean-forward="false" selection-start-line="3909" selection-start-column="0" selection-end-line="3909" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.magnific-popup.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery.magnific-popup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="1344" column="94" lean-forward="false" selection-start-line="1344" selection-start-column="94" selection-end-line="1344" selection-end-column="94" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1513252668543" expanded="true" signature="20461:20467" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mdb.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/mdb.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="1139" column="121" lean-forward="false" selection-start-line="1139" selection-start-column="121" selection-end-line="1139" selection-end-column="121" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1513252693768" expanded="true" signature="118015:118058" ph="..." />
-                <marker date="1513252693768" expanded="true" signature="127603:127646" ph="..." />
-                <marker date="1513252693768" expanded="true" signature="134413:134458" ph="..." />
-                <marker date="1513252693768" expanded="true" signature="146534:146577" ph="..." />
-                <marker date="1513252693768" expanded="true" signature="154430:154475" ph="..." />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -318,52 +272,6 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="MI" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="BilletterieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Projet4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet4" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="MI" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BilletterieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Projet4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet4" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="MI" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BilletterieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Projet4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet4" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="MI" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BilletterieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Projet4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet4" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="MI" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BilletterieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Billetterie" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Projet4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet4" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="MI" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BilletterieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Services" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -410,12 +318,6 @@
               <item name="Projet4" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Projet4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet4" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -529,12 +431,12 @@
       <workItem from="1512484870219" duration="5423000" />
       <workItem from="1512578455326" duration="5758000" />
       <workItem from="1513121271624" duration="231000" />
-      <workItem from="1513244458361" duration="3550000" />
+      <workItem from="1513244458361" duration="4586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340798000" />
+    <option name="totallyTimeSpent" value="341834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1046" extended-state="6" />
@@ -693,21 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Tests/Controller/DefaultControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
     <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/views/Billetterie/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -832,7 +719,7 @@
         <state relative-caret-position="391">
           <caret line="3920" column="19" lean-forward="true" selection-start-line="3920" selection-start-column="19" selection-end-line="3920" selection-end-column="19" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -871,32 +758,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Form/CommandeType.php">
+    <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="116" column="32" lean-forward="false" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
-          <folding>
-            <element signature="e#45#101#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/bootstrap.js">
+    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/mdb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="2418" column="16" lean-forward="false" selection-start-line="2418" selection-start-column="16" selection-end-line="2418" selection-end-column="16" />
+        <state relative-caret-position="330">
+          <caret line="585" column="13" lean-forward="true" selection-start-line="585" selection-start-column="13" selection-end-line="585" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery-2.2.3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="3909" column="0" lean-forward="false" selection-start-line="3909" selection-start-column="0" selection-end-line="3909" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1513253495779" expanded="true" signature="167953:167996" ph="..." />
+            <marker date="1513253495779" expanded="true" signature="180390:180433" ph="..." />
+            <marker date="1513253495779" expanded="true" signature="188811:188856" ph="..." />
+            <marker date="1513253495779" expanded="true" signature="204838:204881" ph="..." />
+            <marker date="1513253495779" expanded="true" signature="215000:215045" ph="..." />
           </folding>
         </state>
       </provider>
@@ -912,17 +792,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/mdb.js">
+    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery-2.2.3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="1139" column="121" lean-forward="false" selection-start-line="1139" selection-start-column="121" selection-end-line="1139" selection-end-column="121" />
+        <state relative-caret-position="612">
+          <caret line="3909" column="0" lean-forward="false" selection-start-line="3909" selection-start-column="0" selection-end-line="3909" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1513252693768" expanded="true" signature="118015:118058" ph="..." />
-            <marker date="1513252693768" expanded="true" signature="127603:127646" ph="..." />
-            <marker date="1513252693768" expanded="true" signature="134413:134458" ph="..." />
-            <marker date="1513252693768" expanded="true" signature="146534:146577" ph="..." />
-            <marker date="1513252693768" expanded="true" signature="154430:154475" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="2418" column="16" lean-forward="false" selection-start-line="2418" selection-start-column="16" selection-end-line="2418" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Tests/Controller/DefaultControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Form/CommandeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="106" column="14" lean-forward="true" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
+          <folding>
+            <element signature="e#45#101#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
