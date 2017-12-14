@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b41ad29d-5448-43ac-aaf6-241d8d0f179f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/MI/BilletterieBundle/Tests/Controller/DefaultControllerTest.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/mdb.js" afterPath="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/mdb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app.php" afterPath="$PROJECT_DIR$/web/app.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,14 +49,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandeType.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommandeType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Form/CommandeType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="839">
               <caret line="106" column="14" lean-forward="true" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
               <folding>
                 <element signature="e#45#101#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/views/Emails/reservation.html.twig" />
         <option value="$PROJECT_DIR$/web/config.php" />
         <option value="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/views/Billetterie/PaiementBillet.html.twig" />
-        <option value="$PROJECT_DIR$/web/app.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MI/BilletterieBundle/Entity/Commande.php" />
         <option value="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/config/services.yml" />
@@ -152,6 +160,7 @@
         <option value="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery-2.2.3.js" />
         <option value="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/jquery.magnific-popup.js" />
         <option value="$PROJECT_DIR$/src/MI/BilletterieBundle/Resources/public/js/mdb.js" />
+        <option value="$PROJECT_DIR$/web/app.php" />
       </list>
     </option>
   </component>
@@ -431,12 +440,12 @@
       <workItem from="1512484870219" duration="5423000" />
       <workItem from="1512578455326" duration="5758000" />
       <workItem from="1513121271624" duration="231000" />
-      <workItem from="1513244458361" duration="4586000" />
+      <workItem from="1513244458361" duration="5378000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341834000" />
+    <option name="totallyTimeSpent" value="342626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1046" extended-state="6" />
@@ -478,13 +487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -822,11 +824,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MI/BilletterieBundle/Form/CommandeType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="839">
           <caret line="106" column="14" lean-forward="true" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
           <folding>
             <element signature="e#45#101#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
