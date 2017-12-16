@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: localhost
+    database_host: ftp.cluster020.hosting.ovh.net
     database_port: null
     database_name: louvre_p4
     database_user: root
